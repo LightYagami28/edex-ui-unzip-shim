@@ -1,0 +1,14 @@
+{
+  "name": "edex-ui-unzip-shim",
+  "version": "1.0.0",
+  "description": "Minimal Open.file()/Parse() compatible shim for app-builder-lib's unzipper usage, backed by yauzl instead of unzipper",
+  "main": "index.js",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LightYagami28/edex-ui-unzip-shim.git"
+  },
+  "dependencies": {
+    "yauzl": "3.4.0"
+  }
+}
