@@ -14,7 +14,12 @@ function isDirectoryName(name) {
 const Open = {
     file(file) {
         return new Promise((resolve, reject) => {
-            yauzl.open(file, { lazyEntries: false }, (err, zipfile) => {
+            yauzl.open(file, {
+                lazyEntries: false,
+                // Reject truncated entries instead of exposing attacker
+                // controlled decompression output to downstream consumers.
+                validateEntrySizes: true,
+            }, (err, zipfile) => {
                 if (err) return reject(err);
                 const files = [];
                 zipfile.on("entry", (entry) => {
@@ -66,7 +71,10 @@ function Parse() {
 
     duplex._final = function (cb) {
         const buffer = Buffer.concat(chunks);
-        yauzl.fromBuffer(buffer, { lazyEntries: true }, (err, zipfile) => {
+        yauzl.fromBuffer(buffer, {
+            lazyEntries: true,
+            validateEntrySizes: true,
+        }, (err, zipfile) => {
             if (err) {
                 duplex.destroy(err);
                 return cb(err);
