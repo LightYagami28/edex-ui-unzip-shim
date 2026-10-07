@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Minimal Open.file()/Parse() compatible shim for app-builder-lib's unzipper usage, backed by yauzl instead of unzipper",
   "main": "index.js",
+  "scripts": {
+    "test": "node --test"
+  },
   "license": "MIT",
   "repository": {
     "type": "git",
