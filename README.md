@@ -28,3 +28,15 @@ a Zip Slip path-traversal payload (rejected).
 Installed via edex-ui's `package.json` `overrides`, aliased under the
 `unzipper` import name so `app-builder-lib`'s `require("unzipper")` resolves
 here transparently - not published to npm as a general-purpose package.
+
+## Development
+
+Requires Node.js 26 or newer. Install dependencies and run the smoke tests:
+
+```sh
+npm ci
+npm test
+```
+
+Dependabot checks npm dependencies weekly. Keep the generated `package-lock.json`
+in sync with `package.json` and review dependency updates before merging.

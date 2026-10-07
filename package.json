@@ -7,6 +7,9 @@
     "test": "node --test"
   },
   "license": "MIT",
+  "engines": {
+    "node": ">=26"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/LightYagami28/edex-ui-unzip-shim.git"
